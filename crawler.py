@@ -75,13 +75,8 @@ async def process_region(region: str):
         sess.commit()
 
 async def main():
-    with Session(sql_engine) as sess:
-        for date in range(20230000, 20231000):
-            sql_replace(sess, sql_tables["zh-cn"],
-                        hsh = hex(random.randint(0, 2**32))[2:],
-                        date = date
-            )
-        sess.commit()
+    for region in region_list:
+        await process_region(region)
 
 if __name__ == "__main__":
     asyncio.run(main())
