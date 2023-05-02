@@ -1,0 +1,4 @@
+fastapi~=0.95.1
+httpx~=0.24.0
+sqlalchemy~=1.4.46
+pyymal~=6.0
