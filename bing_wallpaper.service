@@ -1,0 +1,16 @@
+[Unit]
+Description=bing_wallpaper
+Documentation=https://bing.z0z0r4.top
+
+[Service]
+WorkingDirectory=/opt/bing-wallpaper-api
+ExecStart=sh /opt/bing-wallpaper-api/start.sh
+Restart=on-abnormal
+RestartSec=5s
+KillMode=mixed
+
+StandardOutput=null
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
